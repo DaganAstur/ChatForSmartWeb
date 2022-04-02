@@ -10,14 +10,14 @@ import { RxStompService } from '../rx-stomp.service';
 })
 export class MessagesComponent implements OnInit {
 
-  receivedMessages: string[] = [];
+  receivedMessages: ChatMessage[] = [];
 
   constructor(private rxStompService: RxStompService) { }
 
   ngOnInit(): void {
     this.rxStompService.watch('/topic/public').subscribe((message: Message) => {
-      this.receivedMessages.push(message.body);
-      console.log("Received", message);
+      this.receivedMessages.push(JSON.parse(message.body));
+      console.log("Received", message.body);
       this.rxStompService.publish({ destination: '/app/chat.newUser', body: "username" });
     });
   }
