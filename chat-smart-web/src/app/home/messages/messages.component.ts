@@ -15,7 +15,13 @@ export class MessagesComponent implements OnInit {
   constructor(private rxStompService: RxStompService) { }
 
   ngOnInit(): void {
-    this.rxStompService.watch('/topic/public').subscribe((message: Message) => {
+    this.rxStompService.watch('/room/test/queue/messages').subscribe((message: Message) => {
+      this.receivedMessages.push(JSON.parse(message.body));
+      console.log("Received", message.body);
+      this.rxStompService.publish({ destination: '/app/chat.newUser', body: "username" });
+    });
+
+    this.rxStompService.watch('/room/alma/queue/messages').subscribe((message: Message) => {
       this.receivedMessages.push(JSON.parse(message.body));
       console.log("Received", message.body);
       this.rxStompService.publish({ destination: '/app/chat.newUser', body: "username" });
@@ -24,8 +30,13 @@ export class MessagesComponent implements OnInit {
 
   onSendMessage() {
     const content  = `Message generated at ${new Date()}`;
-    const message:ChatMessage = new ChatMessage(MessageType.CHAT, content, "Me", new Date().toDateString(), 'one', DestinationType.ROOM);
-    this.rxStompService.publish({ destination: '/app/chat.send', body: JSON.stringify(message)});
+    const message:ChatMessage = new ChatMessage(MessageType.CHAT, content, "Me", new Date().toDateString(), 'test', DestinationType.ROOM);
+    this.rxStompService.publish({ destination: '/app/room', body: JSON.stringify(message)});
+  }
+  onSendMessage2() {
+    const content  = `Message generated at ${new Date()}`;
+    const message:ChatMessage = new ChatMessage(MessageType.CHAT, content, "Me", new Date().toDateString(), 'alma', DestinationType.ROOM);
+    this.rxStompService.publish({ destination: '/app/room', body: JSON.stringify(message)});
   }
 
 }

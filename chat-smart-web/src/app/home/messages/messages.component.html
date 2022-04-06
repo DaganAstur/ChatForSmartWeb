@@ -1,9 +1,10 @@
 <div id="messages">
-    <button  mat-raised-button color="basic"  (click)="onSendMessage()">Send Test Message</button>
+    <button  mat-raised-button color="basic"  (click)="onSendMessage()">Send Test</button>
+    <button  mat-raised-button color="basic"  (click)="onSendMessage2()">Send Alma</button>
     <h2>Received messages</h2>
       <mat-list role="list" class="list">
         <mat-list-item role="listitem" *ngFor="let message of receivedMessages">
-          <div>{{message.sender}} - {{message.content}}</div>
+          <div>{{ message.destinationId}} - {{message.sender}} - {{message.content}}</div>
         </mat-list-item>
       </mat-list>
   </div>
