@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { LoginModule } from './login/login.module';
-import { StompclientModule } from './stompclient/stompclient.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { StompclientModule } from './stompclient/stompclient.module';
     BrowserModule,
     AppRoutingModule,
     HomeModule, 
-    LoginModule 
+    LoginModule, 
+    BrowserAnimationsModule
     
   ],
   providers: [],

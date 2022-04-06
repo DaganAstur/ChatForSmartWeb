@@ -4,14 +4,17 @@ import { HomeComponent } from './home.component';
 import { MessagesComponent } from './messages/messages.component';
 import { StompclientModule } from '../stompclient/stompclient.module';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MyMessagesComponent } from './my-messages/my-messages.component';
+
 
 
 @NgModule({
   declarations: [
-    HomeComponent, MessagesComponent
+    HomeComponent, MessagesComponent, MyMessagesComponent
   ],
   imports: [
-    CommonModule, StompclientModule
+    CommonModule, StompclientModule, MatButtonModule
   ],
   exports: [HomeComponent]
 })

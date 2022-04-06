@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -13,7 +17,12 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatCardModule
+
   ],
   exports:[LoginComponent]
 })
