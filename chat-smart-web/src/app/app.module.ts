@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeModule } from './home/home.module';
+import { LoginModule } from './login/login.module';
 import { StompclientModule } from './stompclient/stompclient.module';
 
 @NgModule({
@@ -12,7 +14,8 @@ import { StompclientModule } from './stompclient/stompclient.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StompclientModule    
+    HomeModule, 
+    LoginModule 
     
   ],
   providers: [],

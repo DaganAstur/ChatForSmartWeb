@@ -7,9 +7,10 @@ export const myRxStompConfig: RxStompConfig = {
   // Headers
   // Typical keys: login, passcode, host
   connectHeaders: {
-    login: 'guest',
-    passcode: 'guest',
-  },
+   login: 'user',
+   passcode: 'password',
+  'X-CSRF-TOKEN': 'dXNlcjpwYXNzd29yZA=='
+ },
 
   // How often to heartbeat?
   // Interval in milliseconds, set to 0 to disable

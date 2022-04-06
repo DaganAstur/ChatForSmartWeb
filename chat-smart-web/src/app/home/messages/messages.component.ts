@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from '@stomp/stompjs';
-import { ChatMessage, MessageType } from '../model/chat-message';
-import { RxStompService } from '../rx-stomp.service';
+import { ChatMessage, MessageType } from '../../stompclient/model/chat-message';
+import { RxStompService } from '../../stompclient/rx-stomp.service';
 
 @Component({
   selector: 'app-messages',

@@ -2,13 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RxStompService } from './rx-stomp.service';
 import { rxStompServiceFactory } from './rx-stomp-service-factory';
-import { MessagesComponent } from './messages/messages.component';
+import { MessagesComponent } from '../home/messages/messages.component';
 
 
 
 @NgModule({
   declarations: [
-    MessagesComponent
   ],
   imports: [
     CommonModule
@@ -18,6 +17,6 @@ import { MessagesComponent } from './messages/messages.component';
     useFactory: rxStompServiceFactory
   }
   ],
-  exports: [MessagesComponent]
+  exports: []
 })
 export class StompclientModule { }
