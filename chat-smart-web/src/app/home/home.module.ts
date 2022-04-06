@@ -6,6 +6,7 @@ import { StompclientModule } from '../stompclient/stompclient.module';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MyMessagesComponent } from './my-messages/my-messages.component';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -14,7 +15,7 @@ import { MyMessagesComponent } from './my-messages/my-messages.component';
     HomeComponent, MessagesComponent, MyMessagesComponent
   ],
   imports: [
-    CommonModule, StompclientModule, MatButtonModule
+    CommonModule, StompclientModule, MatButtonModule, MatListModule
   ],
   exports: [HomeComponent]
 })

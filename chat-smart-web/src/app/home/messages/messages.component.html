@@ -1,8 +1,9 @@
 <div id="messages">
     <button  mat-raised-button color="basic"  (click)="onSendMessage()">Send Test Message</button>
     <h2>Received messages</h2>
-    <ol>
-      <!-- we will use Angular binding to populate list of messages -->
-      <li class="message" *ngFor="let message of receivedMessages"> {{message.sender}} - {{message.content}}</li>
-    </ol>
+      <mat-list role="list" class="list">
+        <mat-list-item role="listitem" *ngFor="let message of receivedMessages">
+          <div>{{message.sender}} - {{message.content}}</div>
+        </mat-list-item>
+      </mat-list>
   </div>
