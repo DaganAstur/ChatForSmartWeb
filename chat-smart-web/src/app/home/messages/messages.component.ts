@@ -16,15 +16,13 @@ export class MessagesComponent implements OnInit {
   constructor(private rxStompService: RxStompService) { }
 
   ngOnInit(): void {
-    this.rxStompService.subscribeToRoom("test", DestinationType.USER)
+    this.rxStompService.subscribeToCurrentUserRoom()
     .subscribe((message: Message) => {
-      console.log("subscribed", message);
       this.receivedMessages.push(JSON.parse(message.body));
     });
 
     this.rxStompService.subscribeToRoom("alma", DestinationType.ROOM)
     .subscribe((message: Message) => {
-      console.log("subscribed", message);
       this.receivedMessages.push(JSON.parse(message.body));
     });
     
