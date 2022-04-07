@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RxStompService } from './rx-stomp.service';
-import { rxStompServiceFactory } from './rx-stomp-service-factory';
-import { MessagesComponent } from '../home/messages/messages.component';
-
-
+import { RxStompService } from './services/rx-stomp.service';
+import { rxStompServiceFactory } from './services/rx-stomp-service-factory';
 
 @NgModule({
   declarations: [

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthenticationGuard } from './authentication-guard/authentication.guard';
+import { AuthenticationGuard } from './guards/authentication-guard/authentication.guard';
 
 
 

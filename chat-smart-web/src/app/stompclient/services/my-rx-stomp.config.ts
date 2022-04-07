@@ -1,15 +1,15 @@
 import { RxStompConfig } from '@stomp/rx-stomp';
+import { environment } from 'src/environments/environment';
 
 export const myRxStompConfig: RxStompConfig = {
   // Which server?
-  brokerURL: 'ws://localhost:8095/chat',
+  brokerURL: environment.wsUrl,
 
   // Headers
   // Typical keys: login, passcode, host
   connectHeaders: {
    login: 'user',
-   passcode: 'password',
-  'X-CSRF-TOKEN': 'dXNlcjpwYXNzd29yZA=='
+   passcode: 'blah'
  },
 
   // How often to heartbeat?
